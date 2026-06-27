@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <!-- Sentry SDK Configuration -->
-  <script src="https://browser.sentry-cdn.com/7.105.0/bundle.min.js" crossorigin="anonymous"></script>
-  <script>
+  <!-- Sentry SDK Configuration (ES Module) -->
+  <script type="module">
+    import * as Sentry from "https://esm.sh/@sentry/browser";
+
     Sentry.init({
       dsn: "https://c0a73d541f25506a4319e464a8be2c00@o4511637563768832.ingest.de.sentry.io/4511637572812880",
-      integrations: [new Sentry.BrowserTracing()],
-      tracesSampleRate: 1.0,
+      dataCollection: {
+        // To disable sending user data and HTTP bodies, uncomment the lines below. For more info visit:
+        // https://docs.sentry.io/platforms/javascript/configuration/options/#dataCollection
+        // userInfo: false,
+        // httpBodies: []
+      }
     });
+
+    myUndefinedFunction();
   </script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -626,15 +633,7 @@ section.agency .compare-row.head .compare-cell.right{color:var(--gold);}
 </style>
 </head>
 <body>
-<!-- Temporary Sentry Test Button -->
-<button id="sentry-test-button" style="position:fixed; bottom:20px; right:20px; z-index:9999; padding:15px; background:red; color:white; font-weight:bold; border:none; border-radius:5px; cursor:pointer;">
-  Break the world
-</button>
-<script>
-  document.getElementById('sentry-test-button').addEventListener('click', function() {
-    throw new Error('This is your first error!');
-  });
-</script>
+
 <div id="scroll-progress"></div>
 <div id="noise"></div>
 <div id="cursor-glow"></div>
