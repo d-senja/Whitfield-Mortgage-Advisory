@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+  <!-- Sentry SDK Configuration -->
+  <script src="https://browser.sentry-cdn.com/7.105.0/bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    Sentry.init({
+      dsn: "<YOUR_SENTRY_DSN>", // TODO: Replace with your actual Sentry DSN
+      integrations: [new Sentry.BrowserTracing()],
+      tracesSampleRate: 1.0,
+    });
+  </script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mortgage Broker Nottingham | Free Advice | Whitfield</title>
