@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <!-- Sentry SDK Configuration (ES Module) -->
-  <script type="module">
-    import * as Sentry from "https://esm.sh/@sentry/browser";
-
+  <!-- Sentry SDK Configuration (CDN) -->
+  <script src="https://browser.sentry-cdn.com/7.105.0/bundle.min.js" crossorigin="anonymous"></script>
+  <script>
     Sentry.init({
       dsn: "https://c0a73d541f25506a4319e464a8be2c00@o4511637563768832.ingest.de.sentry.io/4511637572812880",
       dataCollection: {
