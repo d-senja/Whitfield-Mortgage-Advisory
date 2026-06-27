@@ -626,6 +626,15 @@ section.agency .compare-row.head .compare-cell.right{color:var(--gold);}
 </style>
 </head>
 <body>
+<!-- Temporary Sentry Test Button -->
+<button id="sentry-test-button" style="position:fixed; bottom:20px; right:20px; z-index:9999; padding:15px; background:red; color:white; font-weight:bold; border:none; border-radius:5px; cursor:pointer;">
+  Break the world
+</button>
+<script>
+  document.getElementById('sentry-test-button').addEventListener('click', function() {
+    throw new Error('This is your first error!');
+  });
+</script>
 <div id="scroll-progress"></div>
 <div id="noise"></div>
 <div id="cursor-glow"></div>
